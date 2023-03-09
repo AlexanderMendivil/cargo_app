@@ -1,6 +1,6 @@
 .activeStatus{
-    color: green;
+    color: rgb(8, 255, 0 );
 }
 .inactiveStatus{
-    color: red;
+    color: rgb(255, 0, 0 );
 }
