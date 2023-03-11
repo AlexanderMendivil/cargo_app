@@ -1,9 +1,8 @@
 import { Layout } from "./layout/Layout";
-import './app.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Layout/>
     </div>
   );

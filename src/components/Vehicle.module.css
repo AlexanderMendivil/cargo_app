@@ -1,0 +1,25 @@
+.activeStatus{
+    color: rgb(8, 255, 0 );
+}
+.inactiveStatus{
+    color: rgb(255, 0, 0 );
+}
+
+.backgroundTransparent{
+    background-color: transparent !important;
+}
+
+.backgroundUpper{
+    background-color: rgb(122, 138, 255);
+}
+
+.backgroundBottom{
+    background-color: rgb(52, 193, 54);
+
+}
+
+.imageBottomStyle{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
