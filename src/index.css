@@ -12,5 +12,5 @@ code {
     monospace;
 }
 html, body, #root, #root > div {
-  height: 99%;
+  height: 100%;
 }
