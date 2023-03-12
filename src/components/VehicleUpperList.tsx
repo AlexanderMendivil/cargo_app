@@ -11,11 +11,10 @@ interface VehicleUpperListProps{
 
 export const VehicleUpperList = ( { vehicleList, typeList }: VehicleUpperListProps ) => {
 
-
-  console.log(typeList);
   return (
-    // lista en forma de fila con "row"
-    <div className={`row m-1 ${ typeList === ListType.upper ? vehicleStyles.backgroundUpper : vehicleStyles.backgroundBottom}`}>
+      // lista en forma de fila con "row" 
+    <div className={`row h-50 m-1 ${ typeList === ListType.upper ? vehicleStyles.backgroundUpper : vehicleStyles.backgroundBottom}`}>
+    <h1 className="text-center">{typeList === ListType.upper ? 'Mercado' : 'Metering'}</h1>
 
       {/* Una col para espacio */}
         <div className="col-1"></div>
