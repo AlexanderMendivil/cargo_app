@@ -1,1 +1,1 @@
-export type { Vehicle } from './Vehicle.type';
+export type { VehicleInterface } from './Vehicle.type';
