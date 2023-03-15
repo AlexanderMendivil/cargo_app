@@ -1,11 +1,11 @@
 import { ListType } from "../enums/ListTypeEnum";
-import { Vehicle } from "../types/types";
+import { VehicleInterface } from "../types/types";
 import { VehicleItem } from "./VehicleItem";
 import vehicleStyles from './Vehicle.module.css'
 
 // Props del componente
 interface VehicleUpperListProps{
-    vehicleList: Vehicle[];
+    vehicleList?: VehicleInterface[];
     typeList: ListType;
 }
 
@@ -20,7 +20,7 @@ export const VehicleUpperList = ( { vehicleList, typeList }: VehicleUpperListPro
         <div className="col-1"></div>
 
         {/* Iteracion de la lista de vehiculos donde renderizamos el vehiculo individual */}
-        {vehicleList.map( (vehicle, index) => <VehicleItem key={ index } vehicle={vehicle}/>)}
+        {vehicleList?.map( (vehicle, index) => <VehicleItem key={ index } vehicle={vehicle}/>)}
     </div>
   )
 }
