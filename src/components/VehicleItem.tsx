@@ -1,4 +1,4 @@
-import { Vehicle } from '../types/types';
+import { VehicleInterface } from '../types/types';
 import vehicleItemStyle from './Vehicle.module.css';
 import image1 from '../assets/images/upp.jpeg';
 import image2 from '../assets/images/sit.jpeg';
@@ -7,7 +7,7 @@ import image3 from '../assets/images/down.jpeg';
 
 //prop del vehiculo
 interface VehicleItemsPros{
-    vehicle: Vehicle
+    vehicle: VehicleInterface
 }
 
 const randomImage = () =>{
@@ -28,8 +28,9 @@ export const VehicleItem = ( { vehicle }: VehicleItemsPros ) => {
         <img src={randomImage()} alt="" className='img-thumbnail rounded mx-auto d-block w-25 h-25'/>
 
       <div className={` ${vehicleItemStyle.imageBottomStyle}`}>
-          <h3 className={`text-center ${vehicle.status ? vehicleItemStyle.activeStatus : vehicleItemStyle.inactiveStatus}`}>Status</h3>
-          <p className="text-center">{vehicle.usuario}</p>
+        {/* TODO: cambiar claxon por status */}
+          <h3 className={`text-center ${vehicle.claxon ? vehicleItemStyle.activeStatus : vehicleItemStyle.inactiveStatus}`}>Status</h3>
+          <p className="text-center">{vehicle.nombre}</p>
       </div>
 
   </div>
