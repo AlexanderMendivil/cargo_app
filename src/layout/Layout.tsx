@@ -12,11 +12,17 @@ export const Layout = () => {
 
   useEffect(()=>{
     const apiCall = async () => {
+      console.log("gets to heree");
       const data = await getVehicles();
       setMercadoVehicles(data?.mercadoArray);
       setMeteringVehicles(data?.meteringArray);
     }
-    apiCall();
+
+    const interval = setInterval(()=>{
+      apiCall();
+
+    }, 1000);
+    return () => clearInterval(interval);
   },[])
 
   return (
@@ -25,6 +31,8 @@ export const Layout = () => {
     <div className='col-12 h-100'>
       {/* Lista superior */}
             <VehicleUpperList vehicleList={mercadoVehicles} typeList={ListType.upper} />
+
+            {!mercadoVehicles && !meteringVehicles ? <hr/> : null}
       {/* Lista inferior */}
             <VehicleUpperList vehicleList={meteringVehicles} typeList={ListType.bottom}/>
     </div>
