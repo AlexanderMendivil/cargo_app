@@ -1,50 +1,43 @@
-// To parse this data:
-//
-//   import { Convert, VehicleInterface } from "./file";
-//
-//   const vehicleInterface = Convert.toVehicleInterface(json);
-//
-// These functions will throw an error if the JSON doesn't
-// match the expected interface, even if the JSON is valid.
-
 export interface VehicleInterface {
-    id:           number;
-    user?:         string;
-    nombre?:       string;
-    turnoIoF?:     string;
-    equipomovil?:  string;
-    area?:         string;
-    frenopedal?:   string;
-    claxon?:       string;
-    ganchojalon?:  string;
-    alarmareve?:   string;
-    switchencen?:  string;
-    conectorbat?:  string;
-    luces?:        string;
-    tablerofun?:   string;
-    danovisi?:     string;
-    ruedas?:       string;
-    funvolante?:   string;
-    extintor?:     string;
-    botonemg?:     string;
-    fuga?:         string;
-    cuchilla?:     string;
-    funcuchi?:     string;
-    torreta?:      string;
-    palcontrol?:   string;
-    sensorped?:    string;
-    estadoped?:    string;
-    palfunciones?: string;
-    cintosegur?:   string;
-    frenoest?:     string;
-    lineagas?:     string;
-    espejo?:       string;
-    bateria?:      string;
-    nivelbat?:     string;
-    comentarios?:  string;
-    imagen?:       string;
-    fecha?:        Date;
-    user_id?:      number;
+    tipo_equipo:   string;
+    estado_equipo: string;
+    id:            number;
+    user:          string;
+    nombre:        string;
+    turnoIoF:      string;
+    equipomovil:   string;
+    area:          string;
+    frenopedal:    string;
+    claxon:        string;
+    ganchojalon:   string;
+    alarmareve:    string;
+    switchencen:   string;
+    conectorbat:   string;
+    luces:         string;
+    tablerofun:    string;
+    danovisi:      string;
+    ruedas:        string;
+    funvolante:    string;
+    extintor:      string;
+    botonemg:      string;
+    fuga:          string;
+    cuchilla:      string;
+    funcuchi:      string;
+    torreta:       string;
+    palcontrol:    string;
+    sensorped:     string;
+    estadoped:     string;
+    palfunciones:  string;
+    cintosegur:    string;
+    frenoest:      string;
+    lineagas:      string;
+    espejo:        string;
+    bateria:       string;
+    nivelbat:      string;
+    comentarios:   string;
+    imagen:        string;
+    fecha:         Date;
+    user_id:       number;
 }
 
 // Converts JSON strings to/from your types
@@ -213,6 +206,8 @@ function r(name: string) {
 
 const typeMap: any = {
     "VehicleInterface": o([
+        { json: "tipo_equipo", js: "tipo_equipo", typ: "" },
+        { json: "estado_equipo", js: "estado_equipo", typ: "" },
         { json: "id", js: "id", typ: 0 },
         { json: "user", js: "user", typ: "" },
         { json: "nombre", js: "nombre", typ: "" },
