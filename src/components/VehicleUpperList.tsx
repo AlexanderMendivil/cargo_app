@@ -20,7 +20,9 @@ export const VehicleUpperList = ( { vehicleList, typeList }: VehicleUpperListPro
         <div className="col-1"></div>
 
         {/* Iteracion de la lista de vehiculos donde renderizamos el vehiculo individual */}
-        {vehicleList?.map( (vehicle, index) => <VehicleItem key={ index } vehicle={vehicle}/>)}
+        <div className={`${vehicleStyles.overflowList}`}>
+          {vehicleList?.map( (vehicle, index) => <VehicleItem key={ index } vehicle={vehicle}/>)}
+        </div>
     </div>
   )
 }
