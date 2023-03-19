@@ -5,16 +5,16 @@
     color: rgb(255, 0, 0 );
 }
 
-.backgroundTransparent{
-    background-color: transparent !important;
+.backgroundItem{
+    background-color: rgb(230, 255, 238);
 }
 
 .backgroundUpper{
-    background-color: rgb(122, 138, 255);
+    background-color: rgb(255, 255, 255);
 }
 
 .backgroundBottom{
-    background-color: rgb(255, 253, 175);
+    background-color: rgb(255, 255, 255);
 
 }
 
@@ -22,4 +22,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+.overflowList{
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
 }
