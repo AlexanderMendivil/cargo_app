@@ -1,10 +1,12 @@
 import axios from "axios"
+import moment from "moment";
 import { VehicleInterface } from "../types/types";
 
 export const getVehicles = async () => {
     try{
-        //TODO: cambiar el date al día actual, hacer un .env para la API
-        const data = await axios.post('http://localhost:3000/dailyVehicles', { date: "2021-03-09"});
+        const date = moment();
+        //TODO: cambiar el date de la peticion por este formato: date.format('YYYY-MM-D')
+        const data = await axios.post('http://localhost:3000/dailyVehicles', { date: '2021-03-19' });
 
         const mercadoArray:VehicleInterface[] = [];
         const meteringArray:VehicleInterface[] = [];
