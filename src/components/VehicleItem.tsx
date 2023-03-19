@@ -24,7 +24,7 @@ export const VehicleItem = ( { vehicle }: VehicleItemsPros ) => {
 
     <h5 className="card-title text-center">{vehicle.id}</h5>
 
-        <img src={getImage(vehicle.tipo_equipo)} alt="" className='img-thumbnail rounded mx-auto d-block w-25 h-25'/>
+        <img src={getImage(vehicle.tipo_equipo)} alt="" className={`img-thumbnail rounded mx-auto d-block ${vehicleItemStyle.imageSize}`}/>
 
       <div className={` ${vehicleItemStyle.imageBottomStyle}`}>
         {/* TODO: cambiar claxon por status */}
