@@ -5,6 +5,12 @@
     color: rgb(255, 0, 0 );
 }
 
+
+.cardSize{
+    height: 290px !important;
+    width: 350px !important;
+}
+
 .backgroundItem{
     background-color: rgb(230, 255, 238) !important;
 }
