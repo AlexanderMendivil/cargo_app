@@ -2,15 +2,25 @@ import { ListType } from "../enums/ListTypeEnum";
 import { VehicleInterface } from "../types/types";
 import { VehicleItem } from "./VehicleItem";
 import vehicleStyles from './Vehicle.module.css'
+import { useEffect, useRef } from "react";
+import { autoScroll } from "../utils/autoScroll";
 
 // Props del componente
 interface VehicleUpperListProps{
     vehicleList?: VehicleInterface[];
     typeList: ListType;
 }
-
 export const VehicleUpperList = ( { vehicleList, typeList }: VehicleUpperListProps ) => {
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(()=>{
+    //cada 10 milisegundos ejecuta el scroll
+     const intervalId = setInterval(()=>autoScroll(containerRef), 10);
+
+     return () => clearInterval(intervalId);
+  },[])
+    
   return (
       // lista en forma de fila con "row" 
     <div className={`row h-50 ${ typeList === ListType.upper ? vehicleStyles.backgroundUpper : vehicleStyles.backgroundBottom}`}>
@@ -20,7 +30,7 @@ export const VehicleUpperList = ( { vehicleList, typeList }: VehicleUpperListPro
         <div className="col-1"></div>
 
         {/* Iteracion de la lista de vehiculos donde renderizamos el vehiculo individual */}
-        <div className={`${vehicleStyles.overflowList}`}>
+        <div ref={containerRef} className={`${vehicleStyles.overflowList}`}>
           {vehicleList?.map( (vehicle, index) => <VehicleItem key={ index } vehicle={vehicle}/>)}
         </div>
     </div>

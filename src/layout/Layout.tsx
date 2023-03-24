@@ -4,6 +4,7 @@ import { VehicleUpperList } from "../components/VehicleUpperList"
 import { ListType } from "../enums/ListTypeEnum";
 import { VehicleInterface } from "../types/types";
 
+
 // Lista de los vehiculos
 export const Layout = () => {
 
@@ -12,10 +13,14 @@ export const Layout = () => {
 
   useEffect(()=>{
     const apiCall = async () => {
-      console.log("gets to heree");
       const data = await getVehicles();
-      setMercadoVehicles(data?.mercadoArray);
-      setMeteringVehicles(data?.meteringArray);
+      if(data?.mercadoArray.length !== mercadoVehicles?.length){
+        setMercadoVehicles(data?.mercadoArray);
+      }
+      if(data?.meteringArray.length !== mercadoVehicles?.length){
+        setMeteringVehicles(data?.meteringArray);
+
+      }
     }
 
     const interval = setInterval(()=>{
@@ -25,10 +30,11 @@ export const Layout = () => {
     return () => clearInterval(interval);
   },[])
 
+
   return (
 
     // clase col-12, ocupa 12 columnas en la pantalla ( toda la pantalla )
-    <div className='col-12 h-100'>
+    <div  id="scroll" className='col-12 h-100'>
       {/* Lista superior */}
             <VehicleUpperList vehicleList={mercadoVehicles} typeList={ListType.upper} />
 
