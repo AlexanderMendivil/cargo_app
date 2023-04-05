@@ -26,7 +26,7 @@ export const Layout = () => {
     const interval = setInterval(()=>{
       apiCall();
 
-    }, 1000);
+    }, 3000);
     return () => clearInterval(interval);
   },[])
 

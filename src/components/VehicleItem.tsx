@@ -22,15 +22,15 @@ export const VehicleItem = ( { vehicle }: VehicleItemsPros ) => {
       {/* clase para el cuerpo de la carta */}
   <div className="card-body">
 
-    <h5 className="card-title text-center">Equipo movil: {vehicle.equipomovil}</h5>
+    <h5 className="card-title text-center">Equipo movil: {vehicle.vehicleId}</h5>
     <h5 className="card-title text-center">{vehicle.id}</h5>
 
-        <img src={getImage(vehicle.tipo_equipo)} alt="" className={`img-thumbnail rounded mx-auto d-block ${vehicleItemStyle.imageSize}`}/>
+        <img src={getImage(vehicle.vehicleType)} alt="" className={`img-thumbnail rounded mx-auto d-block ${vehicleItemStyle.imageSize}`}/>
 
       <div className={` ${vehicleItemStyle.imageBottomStyle}`}>
         {/* TODO: cambiar claxon por status */}
-          <h3 className={`text-center ${vehicle.estado_equipo === 'Activo' ? vehicleItemStyle.activeStatus : vehicleItemStyle.inactiveStatus}`}>Status</h3>
-          <p className="text-center">{vehicle.nombre}</p>
+          <h3 className={`text-center ${vehicle.status ? vehicleItemStyle.activeStatus : vehicleItemStyle.inactiveStatus}`}>Status</h3>
+          <p className="text-center">{vehicle.employee}</p>
       </div>
 
   </div>

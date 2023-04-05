@@ -1,43 +1,19 @@
+// To parse this data:
+//
+//   import { Convert, VehicleInterface } from "./file";
+//
+//   const vehicleInterface = Convert.toVehicleInterface(json);
+//
+// These functions will throw an error if the JSON doesn't
+// match the expected interface, even if the JSON is valid.
+
 export interface VehicleInterface {
-    tipo_equipo:   string;
-    estado_equipo: string;
-    id:            number;
-    user:          string;
-    nombre:        string;
-    turnoIoF:      string;
-    equipomovil:   string;
-    area:          string;
-    frenopedal:    string;
-    claxon:        string;
-    ganchojalon:   string;
-    alarmareve:    string;
-    switchencen:   string;
-    conectorbat:   string;
-    luces:         string;
-    tablerofun:    string;
-    danovisi:      string;
-    ruedas:        string;
-    funvolante:    string;
-    extintor:      string;
-    botonemg:      string;
-    fuga:          string;
-    cuchilla:      string;
-    funcuchi:      string;
-    torreta:       string;
-    palcontrol:    string;
-    sensorped:     string;
-    estadoped:     string;
-    palfunciones:  string;
-    cintosegur:    string;
-    frenoest:      string;
-    lineagas:      string;
-    espejo:        string;
-    bateria:       string;
-    nivelbat:      string;
-    comentarios:   string;
-    imagen:        string;
-    fecha:         Date;
-    user_id:       number;
+    id:          number;
+    vehicleType: string;
+    vehicleId:   string;
+    area:        string;
+    employee:    string;
+    status:      boolean;
 }
 
 // Converts JSON strings to/from your types
@@ -206,44 +182,11 @@ function r(name: string) {
 
 const typeMap: any = {
     "VehicleInterface": o([
-        { json: "tipo_equipo", js: "tipo_equipo", typ: "" },
-        { json: "estado_equipo", js: "estado_equipo", typ: "" },
         { json: "id", js: "id", typ: 0 },
-        { json: "user", js: "user", typ: "" },
-        { json: "nombre", js: "nombre", typ: "" },
-        { json: "turnoIoF", js: "turnoIoF", typ: "" },
-        { json: "equipomovil", js: "equipomovil", typ: "" },
+        { json: "vehicleType", js: "vehicleType", typ: "" },
+        { json: "vehicleId", js: "vehicleId", typ: "" },
         { json: "area", js: "area", typ: "" },
-        { json: "frenopedal", js: "frenopedal", typ: "" },
-        { json: "claxon", js: "claxon", typ: "" },
-        { json: "ganchojalon", js: "ganchojalon", typ: "" },
-        { json: "alarmareve", js: "alarmareve", typ: "" },
-        { json: "switchencen", js: "switchencen", typ: "" },
-        { json: "conectorbat", js: "conectorbat", typ: "" },
-        { json: "luces", js: "luces", typ: "" },
-        { json: "tablerofun", js: "tablerofun", typ: "" },
-        { json: "danovisi", js: "danovisi", typ: "" },
-        { json: "ruedas", js: "ruedas", typ: "" },
-        { json: "funvolante", js: "funvolante", typ: "" },
-        { json: "extintor", js: "extintor", typ: "" },
-        { json: "botonemg", js: "botonemg", typ: "" },
-        { json: "fuga", js: "fuga", typ: "" },
-        { json: "cuchilla", js: "cuchilla", typ: "" },
-        { json: "funcuchi", js: "funcuchi", typ: "" },
-        { json: "torreta", js: "torreta", typ: "" },
-        { json: "palcontrol", js: "palcontrol", typ: "" },
-        { json: "sensorped", js: "sensorped", typ: "" },
-        { json: "estadoped", js: "estadoped", typ: "" },
-        { json: "palfunciones", js: "palfunciones", typ: "" },
-        { json: "cintosegur", js: "cintosegur", typ: "" },
-        { json: "frenoest", js: "frenoest", typ: "" },
-        { json: "lineagas", js: "lineagas", typ: "" },
-        { json: "espejo", js: "espejo", typ: "" },
-        { json: "bateria", js: "bateria", typ: "" },
-        { json: "nivelbat", js: "nivelbat", typ: "" },
-        { json: "comentarios", js: "comentarios", typ: "" },
-        { json: "imagen", js: "imagen", typ: "" },
-        { json: "fecha", js: "fecha", typ: Date },
-        { json: "user_id", js: "user_id", typ: 0 },
+        { json: "employee", js: "employee", typ: "" },
+        { json: "status", js: "status", typ: true },
     ], false),
 };
