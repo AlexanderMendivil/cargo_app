@@ -39,3 +39,10 @@
     flex-direction: row;
     overflow-y: scroll;
 }
+
+.bottomStyle{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
